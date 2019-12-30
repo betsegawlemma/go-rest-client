@@ -1,0 +1,25 @@
+{{ define "index.layout" }}
+
+{{ template "navbar" . }}
+{{ template "index.content" . }}
+{{ template "footer" . }}
+
+{{ end }}
+
+{{ define "index.content" }}
+<div class="container">
+    <h4>Fetch Single User</h4>
+    <form class="form-inline" method="post" action="/user">
+        <label for="id" class="col-sm-2 col-form-label">User Id</label>
+        <input type="number" class="col-sm-2 form-control" name="id" id="id" value="1" placeholder="User Id">
+        <button type="submit" class="btn btn-primary">Fetch a User</button>
+    </form>
+    <h4>Fetch Multiple Users</h4>
+    <form class="form-inline" method="post" action="/users">
+        <label for="page" class="col-sm-2 col-form-label">Page Number</label>
+        <input type="number" class="col-sm-2 form-control" name="page" id="page" value="1" placeholder="Page Number">
+        <button type="submit" class="btn btn-primary">Fetch Users</button>
+    </form>
+</div>
+
+{{ end }}

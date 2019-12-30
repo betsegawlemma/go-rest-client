@@ -1,0 +1,31 @@
+{{ define "users.layout" }}
+{{ template "navbar" . }}
+{{ template "users.content" . }}
+{{ template "footer" . }}
+{{ end }}
+{{ define "users.content" }}
+<div class="container">
+        <h2>List of Users</h2>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Avatar</th>
+        </thead>
+        <tbody>
+            {{ range . }}
+          <tr>
+            <td> {{ .ID }} </td>
+            <td> {{ .Email }} </td>
+            <td> {{ .FirstName }} </td>
+            <td> {{ .LastName }} </td>
+            <td> <img src="{{.Avatar}}" width="70rem" height="70rem" /> </td>
+          </tr>
+          {{ end }}
+          </tbody>
+          </table>
+</div>
+{{ end }}

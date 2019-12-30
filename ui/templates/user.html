@@ -1,0 +1,16 @@
+{{ define "user.layout" }}
+{{ template "navbar" . }}
+{{ template "user.content" . }}
+{{ template "footer" . }}
+{{ end }}
+{{ define "user.content" }}
+<div class="container">
+    <h2>A Single User</h2>
+    <p><b>ID:</b> {{ .ID}} </p>
+    <p><b>Email:</b> {{ .Email }}</p>
+    <p><b>FirstName:</b> {{ .FirstName }}</p>
+    <p><b>LastName:</b>{{ .LastName }}</p>
+    <p><b>Avatar</b></p>
+    <img src="{{.Avatar}}" width="70rem" height="70rem" />
+</div>
+{{ end }}
